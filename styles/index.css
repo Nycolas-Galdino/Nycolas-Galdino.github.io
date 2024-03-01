@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Especial-Font';
+    src: 
+    url('../src/fonts/04b_03/04b03rev.ttf.eot') format('eot'), /* Caminho da fonte EOT */
+    url('../src/fonts/04b_03/04b03rev.ttf.woff') format('woff'), /* Caminho da fonte WOFF */
+    url('../src/fonts/04b_03/04b03rev.ttf.svg') format('svg'); /* Caminho da fonte SVG */
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  /* Define o GIF como background */
+  background-image: url('../src/images/background/background.gif');
+  
+  /* Define o tamanho do background e ajusta o posicionamento */
+  background-size: cover; /* Cobrir toda a área */
+  background-position: center; /* Centralizar o GIF */
+
+  /* Adiciona um fallback caso o GIF não carregue */
+  background-color: #5398ff; /* Cor de fundo alternativa */
+
+  /* Centraliza os ítens*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Aplicando a fonte ao seu seletor */
+.scroll * {
+    font-family: 'Especial-Font', sans-serif; /* Usando a fonte customizada com uma fonte de fallback */
+    font-size: 1rem;
+}
+
+
+/* Estilos do pergaminho */
+.scroll-container {
+    background-color: #ffe9c2;
+    padding: 20px;
+    border-radius: 20px; /* Aumentando a curvatura das bordas */
+    max-width: 800px;
+    margin: 10px 10px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    height: 90vh; /* Definindo a altura como 80% da altura da viewport */
+  }
+  
+  .scroll {
+    padding: 30px;
+    border-radius: 10px;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    overflow: auto;
+    max-height: calc(80vh - 40px); /* Definindo a altura máxima do conteúdo */
+    position: relative;
+  }
+  
+  /* Efeito de borda do pergaminho */
+  .scroll-container::before,
+  .scroll-container::after {
+    content: "";
+    position: absolute;
+    width: 40px; /* Largura do canto do pergaminho */
+    height: 40px; /* Altura do canto do pergaminho */
+    background-color: #ffe8c1; /* Cor do pergaminho */
+    border-radius: 50%;
+    z-index: -1; /* Movendo para trás do conteúdo */
+    transform: rotate(45deg); /* Rotacionando para formar o canto */
+  }
+  
+  .scroll-container::before {
+    top: -20px; /* Posicionamento do canto superior */
+    left: -20px; /* Posicionamento do canto esquerdo */
+  }
+  
+  .scroll-container::after {
+    bottom: -20px; /* Posicionamento do canto inferior */
+    right: -20px; /* Posicionamento do canto direito */
+  }
+  
+  /* remove a cor de fundo da scrollbar */
+  ::-webkit-scrollbar {background-color: transparent;}
+  ::-webkit-scrollbar-thumb{background-color: #50483a}
+  
+  ::-moz-scrollbar {background-color: transparent;}
+  ::-moz-scrollbar-thumb{background-color:#50483a;}
